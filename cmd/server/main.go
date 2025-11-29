@@ -20,9 +20,10 @@ import (
 
 func main() {
 
-	if err := godotenv.Load(); err != nil {
-		log.Println("couldn't load env variables")
-		return
+	if os.Getenv("ENV") != "production" {
+		if err := godotenv.Load(); err != nil {
+			log.Println("warning: could not load .env, relying on OS env vars")
+		}
 	}
 
 	// 1. Initialize DB

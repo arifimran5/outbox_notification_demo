@@ -28,6 +28,7 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       SERVER_PORT: ${SERVER_PORT}
       APP_URL: ${APP_URL}
+      ENV: production
     ports:
       - "8080:${SERVER_PORT}"   # optional, for local debugging
 
